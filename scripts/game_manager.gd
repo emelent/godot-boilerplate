@@ -41,8 +41,8 @@ func get_player_number(input):
 func num_players():
 	return player_inputs.size()
 	
-func goToScene(scene):
-	get_tree().change_scene(scene)
+func goToScene(path):
+	return get_tree().change_scene(path)
 
 
 func quit():
