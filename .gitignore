@@ -12,3 +12,6 @@ export_presets.cfg
 
 # Build directory
 build
+
+# DS Store
+.DS_Store
