@@ -33,7 +33,7 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="VBoxContainer"]
-margin_right = 96.0
+margin_right = 81.0
 margin_bottom = 20.0
 text = "PLAY"
 __meta__ = {
@@ -42,21 +42,21 @@ __meta__ = {
 
 [node name="Controls" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
-margin_right = 96.0
+margin_right = 81.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 64.738, 24 )
 text = "CONTROLS"
 
 [node name="Shake" type="Button" parent="VBoxContainer"]
 margin_top = 48.0
-margin_right = 96.0
+margin_right = 81.0
 margin_bottom = 68.0
 rect_pivot_offset = Vector2( 64.738, 24 )
 text = "SHAKE"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 margin_top = 72.0
-margin_right = 96.0
+margin_right = 81.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( 64.738, 24 )
 text = "QUIT"
