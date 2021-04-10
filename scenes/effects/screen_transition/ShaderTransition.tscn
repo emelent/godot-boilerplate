@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://shaders/transition_shader.shader" type="Shader" id=1]
+[ext_resource path="res://assets/masks/centerToCorner.png" type="Texture" id=2]
+[ext_resource path="res://assets/masks/leftToRight.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/cutoff = 0.0
+shader_param/smooth_size = 0.138
+shader_param/mask = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "SpiralToCenter"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShaderTransition:material:shader_param/cutoff")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShaderTransition:material:shader_param/mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Wipe"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShaderTransition:material:shader_param/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShaderTransition:material:shader_param/mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+
+[node name="Transition" type="Node2D"]
+
+[node name="ShaderTransition" type="ColorRect" parent="."]
+material = SubResource( 1 )
+margin_left = -6.73474
+margin_top = 12.3471
+margin_right = 1014.27
+margin_bottom = 609.347
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/SpiralToCenter = SubResource( 2 )
+anims/Wipe = SubResource( 3 )
