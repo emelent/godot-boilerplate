@@ -10,7 +10,7 @@ var player_ids = [0, 1, 2, 3]
 # OVERRIDES
 func _ready():
 	# limit Godot's cpu usage (this stops my cpu from going brrrr)
-	OS.set_low_processor_usage_mode(true)
+	# OS.set_low_processor_usage_mode(true)
 #    Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	pass
 
